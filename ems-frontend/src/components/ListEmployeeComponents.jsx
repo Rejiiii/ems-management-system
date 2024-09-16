@@ -49,7 +49,8 @@ const ListEmployeeComponents = () => {
             <table className='table table-striped table-bordered'>
                 <thead>
                     <tr>
-                        <th>Employee Id</th>
+                        <th>#</th>
+                        {/* <th>Employee Id</th> */}
                         <th>Firstname</th>
                         <th>Lastname</th>
                         <th>Email Address</th>
@@ -58,13 +59,14 @@ const ListEmployeeComponents = () => {
                 </thead>
                 <tbody>
                     {
-                        employees.map(employee =>
+                        employees.map((employee, index) =>
                             <tr key={employee.id}>
-                                <td>{employee.id}</td>
+                                <td>{index + 1}</td> 
+                                {/* <td>{employee.id}</td> */}
                                 <td>{employee.firstName}</td>
                                 <td>{employee.lastName}</td>
                                 <td>{employee.email}</td>
-                                <td className='d-flex justify-content-center align-items-center' style={{ gap: '10px'}}>
+                                <td className='d-flex justify-content-center align-items-center' style={{ gap: '10px' }}>
                                     <button className='btn btn-info' onClick={() => updateEmployee(employee.id)}>Update</button>
                                     <button className='btn btn-danger' onClick={() => removeEmployee(employee.id)}>Delete</button>
                                     <button className='btn btn-warning' onClick={() => viewEmployee(employee.id)}>View</button>
