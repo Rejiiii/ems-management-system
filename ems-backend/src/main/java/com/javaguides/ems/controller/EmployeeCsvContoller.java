@@ -20,7 +20,7 @@ public class EmployeeCsvContoller {
         response.setContentType("application/octet-stream");
 
         String headerKey = "Content-Disposition";
-        String headerValue = "attachment;filename=courses.xls";
+        String headerValue = "attachment;filename=employees.xls";
 
         response.setHeader(headerKey, headerValue);
 
