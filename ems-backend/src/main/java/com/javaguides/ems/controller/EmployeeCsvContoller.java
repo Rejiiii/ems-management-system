@@ -10,19 +10,20 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 public class EmployeeCsvContoller {
-     @Autowired
-    private EmployeeCsvService employeeCsvService;
     
+    @Autowired
+    private EmployeeCsvService employeeCsvService;
+
     @GetMapping("/excel")
-    public void generateExcelReport(HttpServletResponse response) throws Exception{
-        
+    public void generateExcelReport(HttpServletResponse response) throws Exception {
+
         response.setContentType("application/octet-stream");
 
         String headerKey = "Content-Disposition";
         String headerValue = "attachment;filename=courses.xls";
 
         response.setHeader(headerKey, headerValue);
-        
+
         employeeCsvService.generateExcel(response);
     }
 }
